@@ -4,7 +4,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: var(--color-secondary);
+  color: var(--color-muted);
   margin-bottom: 0.8rem;
 }
 
@@ -79,7 +79,7 @@
   .value-num {
     font-family: var(--font-display);
     font-size: 2.5rem;
-    color: rgba(201,169,110,0.2);
+    color: rgba(0,0,0,0.08);
     font-weight: 700;
     margin-bottom: 0.8rem;
   }

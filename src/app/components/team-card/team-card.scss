@@ -12,7 +12,7 @@
 
     .avatar-inner {
       transform: scale(1.1) rotateY(10deg);
-      box-shadow: 0 15px 40px rgba(201, 169, 110, 0.3);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
     }
   }
 }
@@ -25,7 +25,7 @@
     width: 100px;
     height: 100px;
     margin: 0 auto;
-    background: linear-gradient(135deg, var(--color-cream), var(--color-accent));
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
     border-radius: 50%;
     display: flex;
     align-items: center;
