@@ -83,6 +83,7 @@
   z-index: 5;
   text-align: center;
   padding: 2rem;
+  animation: heroFadeIn 1s ease-out;
 }
 
 .content-inner {
@@ -119,6 +120,7 @@ h1 {
   line-height: 1.1;
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
+  font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
 }
 
 .subtitle {
@@ -208,4 +210,15 @@ h1 {
 @keyframes scrollWheel {
   0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
   50% { opacity: 0.3; transform: translateX(-50%) translateY(10px); }
+}
+
+@keyframes heroFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
