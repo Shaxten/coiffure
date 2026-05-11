@@ -1,0 +1,27 @@
+<header class="header" [class.scrolled]="scrolled">
+  <div class="header-inner">
+    <a routerLink="/" class="logo">
+      <span class="logo-icon">✂️</span>
+      <span class="logo-text">Élégance</span>
+    </a>
+
+    <button class="menu-toggle" (click)="toggleMenu()" [attr.aria-expanded]="menuOpen" aria-label="Menu">
+      <span class="bar" [class.open]="menuOpen"></span>
+      <span class="bar" [class.open]="menuOpen"></span>
+      <span class="bar" [class.open]="menuOpen"></span>
+    </button>
+
+    <nav class="nav" [class.open]="menuOpen">
+      <ul class="nav-list">
+        <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="menuOpen = false">Accueil</a></li>
+        <li><a routerLink="/services" routerLinkActive="active" (click)="menuOpen = false">Services</a></li>
+        <li><a routerLink="/equipe" routerLinkActive="active" (click)="menuOpen = false">Équipe</a></li>
+        <li><a routerLink="/galerie" routerLinkActive="active" (click)="menuOpen = false">Galerie</a></li>
+        <li><a routerLink="/a-propos" routerLinkActive="active" (click)="menuOpen = false">À Propos</a></li>
+        <li><a routerLink="/contact" routerLinkActive="active" (click)="menuOpen = false">Contact</a></li>
+      </ul>
+    </nav>
+
+    <a routerLink="/reservation" class="cta-btn">Réserver</a>
+  </div>
+</header>

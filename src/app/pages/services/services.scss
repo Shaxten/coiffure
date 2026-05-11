@@ -1,0 +1,35 @@
+.services-page {
+  padding: 5rem 0;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.5rem;
+  border: 1.5px solid rgba(0,0,0,0.08);
+  border-radius: 4px;
+  background: white;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  transition: all 0.3s;
+
+  &:hover { border-color: var(--color-secondary); color: var(--color-secondary); }
+  &.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+  }
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
+}

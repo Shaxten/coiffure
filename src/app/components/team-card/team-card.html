@@ -1,0 +1,15 @@
+<article class="team-card">
+  <div class="card-avatar">
+    <div class="avatar-inner">{{ member().avatar }}</div>
+  </div>
+  <div class="card-info">
+    <h3>{{ member().name }}</h3>
+    <span class="role">{{ member().role }}</span>
+    <p class="bio">{{ member().bio }}</p>
+    <div class="specialties">
+      @for (spec of member().specialties; track spec) {
+        <span class="tag">{{ spec }}</span>
+      }
+    </div>
+  </div>
+</article>

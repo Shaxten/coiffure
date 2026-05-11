@@ -1,0 +1,19 @@
+<app-hero title="Nos Services" subtitle="Des prestations sur mesure pour chaque besoin capillaire." [compact]="true"></app-hero>
+
+<section class="services-page">
+  <div class="container">
+    <div class="filters reveal">
+      <button class="filter-btn" [class.active]="!selectedCategory" (click)="filter(null)">Tous</button>
+      @for (cat of categories; track cat) {
+        <button class="filter-btn" [class.active]="selectedCategory === cat" (click)="filter(cat)">{{ cat }}</button>
+      }
+    </div>
+    <div class="services-grid stagger-children">
+      @for (service of filteredServices; track service.id) {
+        <div class="stagger-item">
+          <app-service-card [service]="service"></app-service-card>
+        </div>
+      }
+    </div>
+  </div>
+</section>

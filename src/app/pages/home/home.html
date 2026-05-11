@@ -1,0 +1,101 @@
+<app-hero
+  title="L'Art de la Coiffure"
+  subtitle="Un espace dédié à votre beauté, où expertise et élégance se rencontrent pour sublimer votre style."
+  ctaText="Prendre rendez-vous"
+  ctaLink="/reservation">
+</app-hero>
+
+<!-- Intro Section -->
+<section class="section intro-section">
+  <div class="container">
+    <div class="intro-grid">
+      <div class="intro-content reveal-left">
+        <span class="section-label">Bienvenue chez Élégance</span>
+        <h2>Votre Salon, Votre Style</h2>
+        <p>Depuis 2015, notre équipe de stylistes passionnés vous accueille dans un cadre raffiné pour vous offrir une expérience capillaire d'exception. Chaque visite est un moment de détente et de transformation.</p>
+        <a routerLink="/a-propos" class="text-link">Découvrir notre histoire →</a>
+      </div>
+      <div class="intro-visual reveal-right">
+        <div class="visual-card">
+          <div class="card-inner">
+            <span class="visual-emoji">💇‍♀️</span>
+          </div>
+          <div class="floating-badge">+2000 clients satisfaits</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Preview -->
+<section class="section services-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Nos Expertises</span>
+      <h2>Services Populaires</h2>
+      <p class="section-desc">Des prestations sur mesure pour révéler votre beauté naturelle.</p>
+    </div>
+    <div class="services-grid stagger-children">
+      @for (service of featuredServices; track service.id) {
+        <div class="stagger-item">
+          <app-service-card [service]="service"></app-service-card>
+        </div>
+      }
+    </div>
+    <div class="section-cta reveal">
+      <a routerLink="/services" class="outline-btn">Voir tous les services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="section stats-section">
+  <div class="container">
+    <div class="stats-grid stagger-children">
+      <div class="stat stagger-item">
+        <span class="stat-number">10+</span>
+        <span class="stat-label">Années d'expérience</span>
+      </div>
+      <div class="stat stagger-item">
+        <span class="stat-number">4</span>
+        <span class="stat-label">Stylistes experts</span>
+      </div>
+      <div class="stat stagger-item">
+        <span class="stat-number">2000+</span>
+        <span class="stat-label">Clients fidèles</span>
+      </div>
+      <div class="stat stagger-item">
+        <span class="stat-number">15+</span>
+        <span class="stat-label">Services offerts</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Team Preview -->
+<section class="section team-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Notre Équipe</span>
+      <h2>Des Artistes Passionnés</h2>
+    </div>
+    <div class="team-grid stagger-children">
+      @for (member of team; track member.id) {
+        <div class="stagger-item">
+          <app-team-card [member]="member"></app-team-card>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="section cta-section reveal-scale">
+  <div class="container">
+    <div class="cta-card">
+      <h2>Prêt pour une Transformation ?</h2>
+      <p>Réservez votre rendez-vous en ligne et laissez nos experts prendre soin de vous.</p>
+      <a routerLink="/reservation" class="cta-button">Réserver maintenant</a>
+    </div>
+  </div>
+</section>

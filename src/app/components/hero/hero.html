@@ -1,0 +1,39 @@
+<section class="hero" [class.compact]="compact()">
+  <div class="hero-bg" [style.transform]="'translateY(' + parallaxY + 'px)'">
+    <div class="overlay"></div>
+    <div class="grain"></div>
+  </div>
+
+  <div class="hero-decor">
+    <div class="line line-1"></div>
+    <div class="line line-2"></div>
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="content-inner">
+      <div class="label-line">
+        <span class="line-deco"></span>
+        <span class="label">Salon de Coiffure</span>
+        <span class="line-deco"></span>
+      </div>
+      <h1>{{ title() }}</h1>
+      <p class="subtitle">{{ subtitle() }}</p>
+      @if (ctaText()) {
+        <a [routerLink]="ctaLink()" class="hero-cta">
+          <span>{{ ctaText() }}</span>
+        </a>
+      }
+    </div>
+  </div>
+
+  @if (!compact()) {
+    <div class="scroll-hint">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <span>Défiler</span>
+    </div>
+  }
+</section>

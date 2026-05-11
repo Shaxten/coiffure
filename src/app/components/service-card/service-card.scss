@@ -1,0 +1,72 @@
+.service-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: all 0.4s var(--transition-elegant);
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+    border-color: var(--color-secondary);
+
+    .card-icon {
+      background: var(--color-secondary);
+      transform: rotateY(180deg);
+    }
+  }
+}
+
+.card-icon {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  background: var(--color-cream);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  transition: all 0.5s var(--transition-elegant);
+  transform-style: preserve-3d;
+}
+
+.card-body {
+  flex: 1;
+
+  h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .description {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(0,0,0,0.04);
+
+  .duration {
+    font-size: 0.85rem;
+    color: var(--color-muted);
+  }
+
+  .price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    font-family: var(--font-display);
+  }
+}

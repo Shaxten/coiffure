@@ -1,0 +1,13 @@
+<app-hero title="Notre Équipe" subtitle="Des artistes passionnés dédiés à sublimer votre beauté." [compact]="true"></app-hero>
+
+<section class="team-page">
+  <div class="container">
+    <div class="team-grid stagger-children">
+      @for (member of team; track member.id) {
+        <div class="stagger-item">
+          <app-team-card [member]="member"></app-team-card>
+        </div>
+      }
+    </div>
+  </div>
+</section>

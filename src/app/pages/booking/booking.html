@@ -1,0 +1,66 @@
+<app-hero title="Réservation" subtitle="Prenez rendez-vous en quelques clics." [compact]="true"></app-hero>
+
+<section class="booking-page">
+  <div class="container">
+    <div class="booking-card reveal-scale">
+      @if (submitted) {
+        <div class="success-state">
+          <div class="success-icon">✓</div>
+          <h2>Rendez-vous Confirmé !</h2>
+          <p>Nous vous enverrons un courriel de confirmation sous peu.</p>
+        </div>
+      } @else {
+        <h2>Prendre Rendez-vous</h2>
+        <p class="booking-desc">Remplissez le formulaire ci-dessous et nous confirmerons votre rendez-vous par courriel.</p>
+
+        <form (ngSubmit)="onSubmit()" class="booking-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Nom complet *</label>
+              <input id="name" name="name" [(ngModel)]="booking.name" required placeholder="Votre nom">
+            </div>
+            <div class="form-group">
+              <label for="email">Courriel *</label>
+              <input id="email" name="email" type="email" [(ngModel)]="booking.email" required placeholder="votre&#64;courriel.com">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Téléphone *</label>
+              <input id="phone" name="phone" [(ngModel)]="booking.phone" required placeholder="(514) 000-0000">
+            </div>
+            <div class="form-group">
+              <label for="service">Service *</label>
+              <select id="service" name="service" [(ngModel)]="booking.service" required>
+                <option value="" disabled>Choisir un service</option>
+                @for (s of services; track s.id) {
+                  <option [value]="s.name">{{ s.name }} — {{ s.duration }}</option>
+                }
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="stylist">Styliste préféré(e)</label>
+              <select id="stylist" name="stylist" [(ngModel)]="booking.stylist">
+                <option value="">Pas de préférence</option>
+                @for (m of team; track m.id) {
+                  <option [value]="m.name">{{ m.name }}</option>
+                }
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="date">Date souhaitée *</label>
+              <input id="date" name="date" type="date" [(ngModel)]="booking.date" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="notes">Notes (optionnel)</label>
+            <textarea id="notes" name="notes" [(ngModel)]="booking.notes" placeholder="Informations supplémentaires..." rows="3"></textarea>
+          </div>
+          <button type="submit" class="submit-btn">Confirmer le rendez-vous</button>
+        </form>
+      }
+    </div>
+  </div>
+</section>

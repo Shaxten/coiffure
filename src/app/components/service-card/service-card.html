@@ -1,0 +1,11 @@
+<article class="service-card">
+  <div class="card-icon">{{ service().icon }}</div>
+  <div class="card-body">
+    <h3>{{ service().name }}</h3>
+    <p class="description">{{ service().description }}</p>
+    <div class="card-meta">
+      <span class="duration">⏱ {{ service().duration }}</span>
+      <span class="price">{{ service().price | currency:'CAD':'symbol':'1.0-0':'fr' }}</span>
+    </div>
+  </div>
+</article>
