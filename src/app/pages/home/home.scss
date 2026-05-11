@@ -1,3 +1,182 @@
+/* Home Hero - inline, no component */
+.home-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.home-hero .hero-bg {
+  position: absolute;
+  inset: 0;
+  background: var(--color-primary);
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(255, 255, 255, 0.02) 0%, transparent 40%);
+  }
+}
+
+.home-hero .hero-decor {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  .line {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.05);
+    &-1 { width: 1px; height: 100%; left: 20%; }
+    &-2 { width: 1px; height: 100%; right: 20%; }
+  }
+
+  .circle {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 50%;
+    animation: heroRotate 40s linear infinite;
+    &-1 { width: 500px; height: 500px; top: -150px; right: -150px; }
+    &-2 { width: 350px; height: 350px; bottom: -100px; left: -100px; animation-direction: reverse; }
+  }
+}
+
+.home-hero .hero-content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  padding: 2rem;
+  max-width: 700px;
+}
+
+.home-hero .label-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  animation: heroIn 0.7s ease-out both;
+  animation-delay: 0.1s;
+
+  .line-deco { width: 50px; height: 1px; background: rgba(255, 255, 255, 0.4); }
+  .label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+
+.home-hero .hero-title {
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 400;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  animation: heroIn 0.7s ease-out both;
+  animation-delay: 0.25s;
+}
+
+.home-hero .hero-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: heroIn 0.7s ease-out both;
+  animation-delay: 0.4s;
+}
+
+.home-hero .hero-cta {
+  display: inline-block;
+  border: 1.5px solid white;
+  color: white;
+  padding: 1rem 3rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  position: relative;
+  overflow: hidden;
+  animation: heroIn 0.7s ease-out both;
+  animation-delay: 0.55s;
+  transition: color 0.4s, border-color 0.4s;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: white;
+    transform: translateY(100%);
+    transition: transform 0.4s;
+  }
+
+  span { position: relative; z-index: 1; transition: color 0.4s; }
+
+  &:hover {
+    &::before { transform: translateY(0); }
+    span { color: var(--color-primary); }
+  }
+}
+
+.home-hero .scroll-hint {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  animation: heroIn 0.7s ease-out both;
+  animation-delay: 0.7s;
+
+  .mouse {
+    width: 22px; height: 34px;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    position: relative;
+
+    .wheel {
+      width: 3px; height: 8px;
+      background: white;
+      border-radius: 2px;
+      position: absolute;
+      top: 6px; left: 50%;
+      transform: translateX(-50%);
+      animation: scrollWheel 2s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes heroIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes scrollWheel {
+  0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 0.3; transform: translateX(-50%) translateY(10px); }
+}
+
+/* Page content */
 .section {
   padding: 7rem 0;
 }

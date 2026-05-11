@@ -1,17 +1,40 @@
-<app-hero title="Nos Services" subtitle="Des prestations sur mesure pour chaque besoin capillaire." [compact]="true"></app-hero>
+<section class="page-hero">
+  <div class="hero-decor">
+    <div class="circle circle-1"></div>
+    <div class="circle circle-2"></div>
+  </div>
+  <div class="hero-content">
+    <div class="label-line">
+      <span class="line-deco"></span>
+      <span class="label">Salon de Coiffure</span>
+      <span class="line-deco"></span>
+    </div>
+    <h1>Nos Services</h1>
+    <p>Des prestations sur mesure pour chaque besoin capillaire.</p>
+  </div>
+</section>
 
 <section class="services-page">
   <div class="container">
-    <div class="filters reveal">
+    <div class="filters">
       <button class="filter-btn" [class.active]="!selectedCategory" (click)="filter(null)">Tous</button>
       @for (cat of categories; track cat) {
         <button class="filter-btn" [class.active]="selectedCategory === cat" (click)="filter(cat)">{{ cat }}</button>
       }
     </div>
-    <div class="services-grid stagger-children">
+
+    <div class="services-list">
       @for (service of filteredServices; track service.id) {
-        <div class="stagger-item">
-          <app-service-card [service]="service"></app-service-card>
+        <div class="service-card">
+          <div class="card-icon">{{ service.icon }}</div>
+          <div class="card-body">
+            <h3>{{ service.name }}</h3>
+            <p>{{ service.description }}</p>
+            <div class="card-meta">
+              <span class="duration">⏱ {{ service.duration }}</span>
+              <span class="price">{{ service.price }}$</span>
+            </div>
+          </div>
         </div>
       }
     </div>

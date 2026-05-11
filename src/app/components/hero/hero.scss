@@ -43,16 +43,8 @@
     position: absolute;
     background: rgba(255, 255, 255, 0.05);
 
-    &-1 {
-      width: 1px;
-      height: 100%;
-      left: 20%;
-    }
-    &-2 {
-      width: 1px;
-      height: 100%;
-      right: 20%;
-    }
+    &-1 { width: 1px; height: 100%; left: 20%; }
+    &-2 { width: 1px; height: 100%; right: 20%; }
   }
 
   .circle {
@@ -61,17 +53,10 @@
     border-radius: 50%;
     animation: rotateSlow 40s linear infinite;
 
-    &-1 {
-      width: 500px;
-      height: 500px;
-      top: -150px;
-      right: -150px;
-    }
+    &-1 { width: 500px; height: 500px; top: -150px; right: -150px; }
     &-2 {
-      width: 350px;
-      height: 350px;
-      bottom: -100px;
-      left: -100px;
+      width: 350px; height: 350px;
+      bottom: -100px; left: -100px;
       animation-direction: reverse;
       animation-duration: 30s;
     }
@@ -83,7 +68,6 @@
   z-index: 5;
   text-align: center;
   padding: 2rem;
-  animation: heroFadeIn 1s ease-out;
 }
 
 .content-inner {
@@ -97,6 +81,8 @@
   justify-content: center;
   gap: 1rem;
   margin-bottom: 2rem;
+  animation: heroIn 0.7s ease-out both;
+  animation-delay: 0.1s;
 
   .line-deco {
     width: 50px;
@@ -121,6 +107,8 @@ h1 {
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
   font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  animation: heroIn 0.7s ease-out both;
+  animation-delay: 0.25s;
 }
 
 .subtitle {
@@ -131,6 +119,8 @@ h1 {
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
+  animation: heroIn 0.7s ease-out both;
+  animation-delay: 0.4s;
 }
 
 .hero-cta {
@@ -142,9 +132,11 @@ h1 {
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  transition: all 0.4s var(--transition-elegant);
   position: relative;
   overflow: hidden;
+  animation: heroIn 0.7s ease-out both;
+  animation-delay: 0.55s;
+  transition: all 0.4s var(--transition-elegant);
 
   &::before {
     content: '';
@@ -180,6 +172,8 @@ h1 {
   font-size: 0.7rem;
   letter-spacing: 2px;
   text-transform: uppercase;
+  animation: heroIn 0.7s ease-out both;
+  animation-delay: 0.7s;
 
   .mouse {
     width: 22px;
@@ -202,6 +196,17 @@ h1 {
   }
 }
 
+@keyframes heroIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 @keyframes rotateSlow {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -210,15 +215,4 @@ h1 {
 @keyframes scrollWheel {
   0%, 100% { opacity: 1; transform: translateX(-50%) translateY(0); }
   50% { opacity: 0.3; transform: translateX(-50%) translateY(10px); }
-}
-
-@keyframes heroFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }

@@ -101,9 +101,9 @@ button { font-family: inherit; cursor: pointer; }
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--color-cream); }
-::-webkit-scrollbar-thumb { background: var(--color-secondary); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: var(--color-primary); border-radius: 3px; }
 
 ::selection {
-  background: var(--color-secondary);
+  background: var(--color-primary);
   color: white;
 }
